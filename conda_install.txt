@@ -1,0 +1,26 @@
+# cmd: /home/abaras1/miniconda3/bin/conda create -n gpu-ml-base
+# conda version: 24.3.0
+# cmd: /home/abaras1/miniconda3/bin/conda install -c conda-forge tensorflow==2.15.0=cuda120py311h5cbd639_3 pytorch==2.1.2 ipykernel ipywidgets seaborn numpy pandas h5py tqdm scikit-learn
+# conda version: 24.3.0
+# update specs: ['h5py', 'ipykernel', 'ipywidgets', 'numpy', 'pandas', 'pytorch==2.1.2', 'scikit-learn', 'seaborn', 'tensorflow==2.15.0=cuda120py311h5cbd639_3', 'tqdm']
+# cmd: /home/abaras1/miniconda3/bin/conda install -c conda-forge tensorflow-datasets
+# conda version: 24.3.0
+# update specs: ['tensorflow-datasets']
+# cmd: /home/abaras1/miniconda3/bin/conda install -c conda-forge zarr
+# conda version: 24.3.0
+# update specs: ['zarr']
+# cmd: /home/abaras1/miniconda3/bin/conda install -c conda-forge notebook ipykernel
+# conda version: 24.3.0
+# update specs: ['ipykernel', 'notebook']
+# cmd: /home/abaras1/miniconda3/bin/conda install scikit-image
+# conda version: 24.3.0
+# update specs: ['scikit-image']
+# cmd: /home/abaras1/miniconda3/bin/conda install pyvips
+# conda version: 24.3.0
+# update specs: ['pyvips']
+# cmd: /home/abaras1/miniconda3/bin/conda install opencv
+# conda version: 24.3.0
+# update specs: ['opencv']
+# cmd: /home/abaras1/miniconda3/bin/conda install fastcluster
+# conda version: 24.3.0
+# update specs: ['fastcluster']
