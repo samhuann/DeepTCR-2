@@ -15,6 +15,7 @@ class KerasCrossValidation:
         self.keras_model = keras_model
         self.initial_state = self.keras_model.get_weights()
         self.save_filepath = save_filepath
+        
 
     def __call__(self, n_splits=10, batch_size=200, min_epochs=20, patience=30, max_epochs=100, training_repeat=1):
         # instantiate stratified k fold
@@ -83,8 +84,7 @@ class KerasCrossValidation:
 
         return y_pred, y_test, history
 
-
-def plot_classification_performance(axs, y_true, y_pred, training_history=None, normalize=None, include_values=True, display_labels=None, fontsize=8):
+def plot_classification_performance(axs, y_true, y_pred, training_history=None, normalize=None, include_values=True, display_labels=None, fontsize=8, class_names=None):
     # compute the confusion matrix
     cm = confusion_matrix(y_true, np.argmax(y_pred, axis=-1), normalize=normalize)
     # plot the confusion matrix
@@ -95,7 +95,14 @@ def plot_classification_performance(axs, y_true, y_pred, training_history=None, 
     for i in range(y_pred.shape[1]):
         fpr, tpr, _ = roc_curve(y_true == i, y_pred[:, i])
         roc_auc = auc(fpr, tpr)
-        axs[1].plot(fpr, tpr, label=f'AUC = {roc_auc:.2f})')
+        
+        # Use class names if provided, otherwise use class index
+        if class_names is not None and i < len(class_names):
+            label = f'{class_names[i]} (AUC = {roc_auc:.2f})'
+        else:
+            label = f'Class {i} (AUC = {roc_auc:.2f})'
+            
+        axs[1].plot(fpr, tpr, label=label)
     axs[1].legend(fontsize=fontsize)
 
     # plot the training losses if provided
